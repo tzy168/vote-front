@@ -1,4 +1,4 @@
-import {link} from 'react-router-dom';
+// import {link} from 'react-router-dom';
 
 const Navbar = ({walletAddress = '', connectWallet}) => {
     return (

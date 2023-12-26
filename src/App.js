@@ -2,7 +2,7 @@ import{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar.js';
 import Home from './Home.js';
-import Signup from './signup.js';
+import VoteDetail from './voteDetail.js';
 import './App.css';
 
 function App() {
@@ -42,7 +42,7 @@ return (
       <Navbar onConnectWallet={getWalletAddress} address={walletAddress} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/voteDetail/:id" element={<VoteDetail />} />
       </Routes>
     </Router>
   </div> 
