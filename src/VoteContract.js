@@ -2,19 +2,21 @@ import { ethers } from "ethers"
 import ABI from "./voteContract.json"
 
 // const wallet = ethers.Wallet.
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-//const provider = new ethers.BrowserProvider(window.ethereum);
-const provider = new ethers.JsonRpcProvider("http://localhost:8545")
-const signer = await provider.getSigner()
-const contract = new ethers.Contract(contractAddress, ABI, signer)
+const contractAddress = "0xcbEAF3BDe82155F56486Fb5a1072cb8baAf547cc"
 
-export async function createCandidate(id, name, description) {
-	const response = await contract.createCandidate(id, name, description)
+const provider = new ethers.JsonRpcProvider("http://localhost:8545")
+//const provider = new ethers.BrowserProvider(window.ethereum)
+let signer = await provider.getSigner()
+console.log(signer)
+let contract = new ethers.Contract(contractAddress, ABI, signer)
+
+export async function createCandidate(name, description) {
+	const response = await contract.createCandidate(name, description)
 	await response.wait(1)
 }
 
-export async function createVote(id, name, description, endTime) {
-	const response = await contract.createVote(id, name, description, endTime)
+export async function createVote(name, description, endTime) {
+	const response = await contract.createVote(name, description, endTime)
 	await response.wait(1)
 }
 
@@ -29,7 +31,7 @@ export async function removeVote(voteId) {
 }
 
 //
-export async function vote(_id, _candidateId) {
+export async function fvote(_id, _candidateId) {
 	const tx = await contract.vote(_id, _candidateId)
 	await tx.wait()
 }
@@ -72,4 +74,9 @@ export async function getVoteResult(voteId) {
 export async function getMyInfo() {
 	const myInfo = await contract.getMyInfo()
 	return myInfo
+}
+
+export async function isRegistered() {
+	const isRegistered = await contract.isRregiser()
+	return isRegistered
 }
