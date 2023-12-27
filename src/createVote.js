@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import "./App.css"
-import { createVote } from "./VoteContract.js"
+import { createVote ,showAllCandidates} from "./VoteContract.js"
 
 function CREATE_VOTE() {
 	const [name, setName] = useState("")
@@ -17,7 +17,7 @@ function CREATE_VOTE() {
 		}
 	}
 	return (
-		<div className="App">
+		<div className="App-creatVote">
 			<header className="App-header">
 				<h1>Create Vote</h1>
 				<br />

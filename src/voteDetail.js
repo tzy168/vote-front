@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getVote, addCandidateToVote, fvote } from "./VoteContract.js"
+import { getVote, addCandidateToVote, fvote ,removeVote,cancelVote} from "./VoteContract.js"
 function VoteDetail() {
 	const [vote, setVote] = useState(null)
 	const [candidateId, setCandidateId] = useState(0)
@@ -38,6 +38,25 @@ function VoteDetail() {
 			alert(err.message)
 		}
 	}
+
+	const handleremoveVote = async () => {
+		try {
+			await removeVote(vote.id)
+			alert("Cancel vote successfully")
+		} catch (err) {
+			alert("Cancel vote failed")
+		}
+	}
+	const handleCancelVote = async () => {
+		try {
+			await cancelVote(vote.id)
+			alert("Cancel vote successfully")
+		} catch (err) {
+			alert("Cancel vote failed")
+		}
+	}
+
+
 	return (
 		<div className="vote-detail-container">
 			<h2>{vote.id}</h2>
@@ -46,14 +65,19 @@ function VoteDetail() {
 				Start Time: {new Date(Number(vote.startTime) * 1000).toLocaleString()}
 			</p>
 			<p>End Time: {new Date(Number(vote.endTime) * 1000).toLocaleString()}</p>
-			<p>Total: {vote.total}</p>
+			<p>Total: {Number(vote.total)}</p>
+			<button className="vote-cancel-button" onClick={handleremoveVote}>删除</button>
 			<h3>Candidates:</h3>
 			{vote.candidates.map((candidate, index) => (
 				<div key={index} className="vote-detail-item">
-					<p>{candidate.name}</p>
-					<p>{candidate.description}</p>
-					<p>{candidate._total}</p>
+					<p>id: {Number(candidate.id)}</p>
+					<p>name:{candidate.name}</p>
+					<p>description:{candidate.description}</p>
+					<p>candidate_total: {Number(candidate._total)}</p>
+					<div>
 					<button onClick={() => handleVote(Number(candidate.id))}>Vote</button>
+					<button className="cancel-button" onClick={handleCancelVote}>CancelVote</button>
+					</div>
 				</div>
 			))}
 			<input

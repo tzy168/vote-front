@@ -4,17 +4,18 @@ import "./App.css"
 import { getMyInfo } from "./VoteContract.js"
 
 const MY_INFO = () => {
-	const [id, setId] = useState(0)
-	const [address, setAddress] = useState("")
+	const [myinfo, setinfo] = useState(0)
+	// const [address, setAddress] = useState("")
 
 	useEffect(() => {
 		const get_MyInfo = async () => {
-			const accounts = await window.ethereum.request({ method: "eth_accounts" })
-			const activeAccount = accounts[0]
+			// const accounts = await window.ethereum.request({ method: "eth_accounts" })
+			// const activeAccount = accounts[0]
 			const myInfo = await getMyInfo()
-			setId(myInfo.userid)
-			setAddress(myInfo.addr)
-			console.log(myInfo)
+			// myInfo.userid=parseInt(myInfo.userid)
+			setinfo(myInfo)
+			// setAddress(myInfo.addr)
+			// console.log(myInfo)
 		}
 		window.ethereum.on("accountsChanged", get_MyInfo)
 		get_MyInfo()
@@ -24,8 +25,8 @@ const MY_INFO = () => {
 	return (
 		<div className="App">
 			<h1>My Info</h1>
-			<p>My ID: {id}</p>
-			<p>My Address: {address}</p>
+			<p>My ID: {myinfo.userid}</p>
+			<p>My Address: {myinfo.addr}</p>
 			<Link to="/">Home</Link>
 		</div>
 	)

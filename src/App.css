@@ -151,3 +151,194 @@ body {
 .vote-item p:not(:first-child) {
   margin-left: 10px;
 }
+/* MyInfo.css */
+
+.App {
+  padding: 20px;
+}
+
+.App h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.App div {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.App a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* CreateCandidate.css */
+
+.App-candidate {
+  padding: 20px;
+}
+
+.App-candidate header {
+  text-align: center;
+}
+
+.App-candidate h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.App-candidate input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.App-candidate button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.App-candidate button:hover {
+  background-color: #0056b3;
+}
+
+.App-candidate a button {
+  background-color: #6c757d;
+}
+
+.App-candidate a button:hover {
+  background-color: #5a6268;
+}
+
+/* CreateVote.css */
+
+.App-creatVote {
+  padding: 20px;
+}
+
+.App-creatVote header {
+  text-align: center;
+}
+
+.App-creatVote h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.App-creatVote input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.App-creatVote button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.App-creatVote button:hover {
+  background-color: #0056b3;
+}
+
+.App-creatVote a button {
+  background-color: #6c757d;
+}
+
+.App-creatVote a button:hover {
+  background-color: #5a6268;
+}
+
+.vote-detail-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+h2, h3, p {
+  margin-bottom: 10px;
+}
+
+.vote-detail-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="text"] {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.cancel-button {
+  margin-left: 15px;
+  background-color: #dc3545;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+.vote-cancel-button {
+  margin-left: 1px;
+  background-color: #dc3545;
+}
+
+.title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.candidate {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.candidate p {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+.candidate-info {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
